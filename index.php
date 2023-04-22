@@ -35,7 +35,7 @@ if (!empty($_POST)) {
           \\\'.$Menu_Title.\\\' :
           <ul class="MenuJson menu-bar"></ul>
         </menu>
-        <h6 class="h6">Open Menu</h6>
+        <button style="border-radius: 10%;" class="h6">Open Menu</button>
         <script type="module">
           import { xlm_menu } from "../lwp-libs/js.js";
           xlm_menu();
@@ -214,7 +214,7 @@ if (!empty($_POST)) {
   <form action="../lwp-serveur/createAccount.php" method="post">
     <h1>\\\'.$Menu_Color.\\\'</h1>
     <div class="form-group">
-      <label for="pseudo">Nom d\\\\\'utilisateur</label>
+      <label for="pseudo">Nom d utilisateur</label>
       <input id="pseudo" name="pse" type="text">
     </div>
     <div class="form-group">
@@ -222,7 +222,7 @@ if (!empty($_POST)) {
       <input id="password" name="mdp" type="password">
     </div>
     <div class="form-group">
-      <input type="submit" value="S\\\\\'enregistrer">
+      <input type="submit" value="S enregistrer">
     </div>
   </form>
 </main>
@@ -426,7 +426,7 @@ if (!empty($_POST)) {
         <button class="Return">Retours</button>
         <br>
         <br>
-        <form action="../../lwp-serveur/CreatePost.php" method="post">
+        <form action="../lwp-serveur/CreatePost.php" method="post">
           <label for="Name">Nom de votre post</label>
           <input style="color: white;" type="text" name="Name" id="Name" />
     
@@ -676,7 +676,7 @@ if (!empty($_POST)) {
         $Menu_Color = $_POST["Slogan"];
         file_put_contents("content/" . $file_name . ".txt", \\\'
         <div style="height:50vh;">
-        <iframe style="width:100%; height:100%;" src="./NewPosts.php?number=\\\'.$_POST["NumberOfPosts"].\\\'"></iframe>
+        <iframe style="width:100%; height:100%;" src="./newPosts.php?number=\\\'.$_POST["NumberOfPosts"].\\\'"></iframe>
 </div>
 
         \\\');
@@ -1643,99 +1643,82 @@ if (!empty($_COOKIE["LWPS_PASSWORD"])) {
 ');
 file_put_contents("./lwp-error/start.php", '
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installing</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Erreur</title>
+    <style>
+    body {
+        background-color: #1a1a1a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        font-size: 4em;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    p {
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    </style>
 </head>
 
 <body>
-    <main>
-        <h1>!!! UNE FOIS CONNECTEZ (OUVREZ CETTE PAGE POUR LA PREMIÈRE FOIS) METTEZ UN AUTRE MOT DE PASSE (mot de passe
-            par déf : 1234)!!!!!</h1>
-        <?php
+    <h1>Erreur</h1>
+    <p>
+        Il semble que quelque chose ait mal tourné. Veuillez
+        <a href="../index.php">retourner à l\'accueil</a> et réessayer.
+    <p>
+        <br>
+        "Compte non trouvé" : Ce message d\'erreur peut être affiché si un utilisateur essaie de se connecter à un
+        compte
+        <br>
+        qui n\'existe pas dans la base de données. La suggestion de correction pourrait être de demander à
+        l\'utilisateur
+        <br>
+        de vérifier s\'il a entré le nom d\'utilisateur ou le mot de passe correctement, et de lui offrir la possibilité
+        <br>
+        de créer un nouveau compte s\'il n\'en a pas encore.
+        <br>
 
-                if (!empty($_POST["password"])) {
-                    setcookie("LWPS_PASSWORD", $_POST["password"], time()+2300000, "/", $_SERVER["SERVER_NAME"]);
-                }
-        include_once("../lwp-serveur/password.php");
-if (!empty($_COOKIE["LWPS_PASSWORD"])) {
-    if ($_COOKIE["LWPS_PASSWORD"] == $CODE) {
-        echo "C.O.D.E OK!";
-        if (!empty($_POST["password2"])) {
-            rename("../lwp-serveur/".$CODE.".json", "../lwp-serveur/".$_POST["password2"].".json");
-            setcookie("LWPS_PASSWORD", $_POST["password2"], time()+2300000, "/", $_SERVER["SERVER_NAME"]);
-            file_put_contents("../lwp-serveur/password.php", \'
-            <?php
-            $CODE="\'.$_POST["password2"].\'"
-            ?>
-        \');
-        echo "MDP CHANGÉ!";
-        }
-        } else {
-        echo "WRONG CODE!";
-        }
-        } else {
-        setcookie("LWPS_PASSWORD", "1234", time()+2300000, "/", $_SERVER["SERVER_NAME"]);
-        }
-        ?>
-        <form method="post" action="./start.php">
-            <input name="password" type="password" placeholder="Mot de passe"></input>
-            <input type="submit" value="Se Connecter"></input>
-            <br>
-            ^
-            <br>
-            |
-            <h2>(Nouveau Mot De Passe Mettez votre mdp AVANT)</h2>
-            <input name="password2" type="password" placeholder="Nouveau Mot de passe"></input>
-            <input type="submit" value="Valider"></input>
-            <a href="index.php">Retours</a>
-        </form>
-    </main>
-    <style>
-    body {
-        background: rgb(182, 91, 91);
-        font-family: Arial, Helvetica, sans-serif;
-    }
+        <br>
+        "Formulaire non rempli" : Ce message d\'erreur peut être affiché si un utilisateur essaie de soumettre un
+        <br>
+        formulaire sans avoir rempli tous les champs obligatoires. La suggestion de correction pourrait être d\'indiquer
+        <br>
+        clairement quels champs sont obligatoires et d\'afficher un message d\'erreur spécifique pour chaque champ
+        <br>
+        manquant.
+        <br>
 
-    main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        height: 70%;
-        background-color: white;
-        border: 10px solid black;
-        border-radius: 20px;
-        box-shadow: inset 0 0 20px 0px;
-        overflow: scroll;
-    }
+        <br>
+        "Page introuvable" : Ce message d\'erreur peut être affiché si un utilisateur essaie d\'accéder à une page qui
+        <br>
+        n\'existe pas ou qui a été déplacée. La suggestion de correction pourrait être de rediriger l\'utilisateur vers
+        <br>
+        une page similaire ou de lui offrir une recherche pour trouver la page qu\'il cherche.
+        <br>
 
-    input {
-        padding: 10px;
-        background-color: salmon;
-        color: black;
-        border-radius: 20px;
-        transition: 0.5s;
-    }
-
-    input[type="submit"]:hover {
-        letter-spacing: 5px;
-    }
-
-    .red {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: red;
-    }
-    </style>
+        <br>
+        "Erreur de chargement de page" : Ce message d\'erreur peut être affiché si une page ne peut pas être chargée en
+        <br>
+        raison d\'un problème technique. La suggestion de correction pourrait être de demander à l\'utilisateur de
+        <br>
+        vérifier sa connexion Internet ou de contacter l\'assistance technique pour obtenir de l\'aide.
+        <br>
+    </p>
+    </p>
 </body>
 
 </html>
