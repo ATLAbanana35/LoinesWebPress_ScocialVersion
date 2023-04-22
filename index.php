@@ -17,7 +17,7 @@ if (!empty($_POST["Name"])) {
     file_put_contents($_POST["Name"]."/content/number.txt", "-1");
     file_put_contents($_POST["Name"]."/content/title.txt",$_POST["Name"] );
     $p = $_POST["Name"];
-    file_put_contents("$p/action.php", \\\'
+    file_put_contents("$p/action.php", \'
     <?php
 include_once("../lwp-serveur/password.php");
 if (!empty($_COOKIE["LWPS_PASSWORD"])) {
@@ -492,7 +492,7 @@ if (!empty($_POST)) {
         
         h1 {
           color: #00ffff;
-          font-family: \\\\\'Orbitron\\\\\', sans-serif;
+          font-family: "Orbitron", sans-serif;
           font-size: 3em;
           margin-bottom: 30px;
           text-align: center;
@@ -507,7 +507,7 @@ if (!empty($_POST)) {
         label {
           color: #00ffff;
           display: block;
-          font-family: \\\\\'Orbitron\\\\\', sans-serif;
+          font-family: "Orbitron", sans-serif;
           font-size: 1.5em;
           font-weight: bold;
           margin-bottom: 10px;
@@ -520,7 +520,7 @@ if (!empty($_POST)) {
           border: none;
           border-bottom: 2px solid #00ffff;
           color: #fff;
-          font-family: \\\\\'Orbitron\\\\\', sans-serif;
+          font-family: "Orbitron", sans-serif;
           font-size: 1.2em;
           padding: 10px;
           width: 100%;
@@ -531,7 +531,7 @@ if (!empty($_POST)) {
           border: none;
           color: #000;
           cursor: pointer;
-          font-family: \\\\\'Orbitron\\\\\', sans-serif;
+          font-family: "Orbitron", sans-serif;
           font-size: 1.5em;
           padding: 10px 20px;
           text-transform: uppercase;
@@ -795,8 +795,8 @@ if (!empty($_POST)) {
   header("Location: ../lwp-error/start.php");
 }
 ?>
-\\\');
-file_put_contents("$p/allPost.php", \\\'
+\');
+file_put_contents("$p/allPost.php", \'
 <h1>All Posts : </h1>
 <hr>
 <?php
@@ -818,8 +818,8 @@ body {
     font-family: Arial;
 }
 </style>
-\\\');
-file_put_contents("$p/delete.php", \\\'
+\');
+file_put_contents("$p/delete.php", \'
 <?php
 include_once("../lwp-serveur/password.php");
 if (!empty($_COOKIE["LWPS_PASSWORD"])) {
@@ -840,8 +840,8 @@ header("Location: ./index.php");
     header("Location: ../lwp-error/start.php");
   }
 ?>
-\\\');
-file_put_contents("$p/index.php", \\\'
+\');
+file_put_contents("$p/index.php", \'
 <!DOCTYPE html>
 <html lang="en">
 
@@ -878,8 +878,8 @@ while ($i < count_files("./content/", "txt", 1)-2) {
 ?>
 
 </html>
-\\\');
-file_put_contents("$p/main.js", \\\'
+\');
+file_put_contents("$p/main.js", \'
 let toggle = false;
 document.querySelector(".close").addEventListener("click", () => {
 if (!toggle) {
@@ -1036,8 +1036,8 @@ document.querySelector(".NewObject_AllPosts").addEventListener("click", (e) => {
 seeFom("./action.php?type=allPosts", "Rien a mettre", {});
 });
 
-\\\');
-file_put_contents("$p/modify.php", \\\'
+\');
+file_put_contents("$p/modify.php", \'
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1155,8 +1155,8 @@ file_put_contents("$p/modify.php", \\\'
 </body>
 
 </html>
-\\\');
-file_put_contents("$p/modifyIner.php", \\\'
+\');
+file_put_contents("$p/modifyIner.php", \'
 <?php
 include_once("../lwp-serveur/password.php");
 if (!empty($_COOKIE["LWPS_PASSWORD"])) {
@@ -1175,8 +1175,8 @@ while ($i < count_files("./content/", "txt", 1)-2) {
     header("Location: ../lwp-error/start.php");
   }
 ?>
-\\\');
-file_put_contents("$p/newPosts.php", \\\'
+\');
+file_put_contents("$p/newPosts.php", \'
 <h1>New Posts : </h1>
 <hr>
 <?php
@@ -1199,8 +1199,8 @@ body {
     font-family: Arial;
 }
 </style>
-\\\');
-file_put_contents("$p/rename.php", \\\'
+\');
+file_put_contents("$p/rename.php", \'
 <?php
 include_once("../lwp-serveur/password.php");
 if (!empty($_COOKIE["LWPS_PASSWORD"])) {
@@ -1250,8 +1250,8 @@ if (isset($_GET[\\\'number\\\']) && isset($_GET[\\\'file\\\'])) {
 } else {
     header("Location: ../lwp-error/start.php");
   }
-\\\');
-file_put_contents("$p/style.css", \\\'
+\');
+file_put_contents("$p/style.css", \'
 body {
     font-size: 15pt;
     font-family: Arial;
@@ -1284,7 +1284,7 @@ body {
     transform: translate(-50%, -50%);
   }
   
-\\\');
+\');
 $JSON = json_decode(file_get_contents("./lwp-client/pages.json"));
     $JSONResp = new stdClass;
     $JSON->{$_POST["Name"]} = $JSONResp;
@@ -1643,82 +1643,99 @@ if (!empty($_COOKIE["LWPS_PASSWORD"])) {
 ');
 file_put_contents("./lwp-error/start.php", '
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <title>Erreur</title>
-    <style>
-    body {
-        background-color: #1a1a1a;
-        color: #fff;
-        font-family: Arial, sans-serif;
-    }
-
-    h1 {
-        font-size: 4em;
-        text-align: center;
-        margin-top: 100px;
-    }
-
-    p {
-        font-size: 1.5em;
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: underline;
-    }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>Erreur</h1>
-    <p>
-        Il semble que quelque chose ait mal tourné. Veuillez
-        <a href="../index.php">retourner à l\'accueil</a> et réessayer.
-    <p>
-        <br>
-        "Compte non trouvé" : Ce message d\'erreur peut être affiché si un utilisateur essaie de se connecter à un
-        compte
-        <br>
-        qui n\'existe pas dans la base de données. La suggestion de correction pourrait être de demander à
-        l\'utilisateur
-        <br>
-        de vérifier s\'il a entré le nom d\'utilisateur ou le mot de passe correctement, et de lui offrir la possibilité
-        <br>
-        de créer un nouveau compte s\'il n\'en a pas encore.
-        <br>
+    <main>
+        <h1>!!! UNE FOIS CONNECTEZ (OUVREZ CETTE PAGE POUR LA PREMIÈRE FOIS) METTEZ UN AUTRE MOT DE PASSE (mot de passe
+            par déf : 1234)!!!!!</h1>
+        <?php
 
-        <br>
-        "Formulaire non rempli" : Ce message d\'erreur peut être affiché si un utilisateur essaie de soumettre un
-        <br>
-        formulaire sans avoir rempli tous les champs obligatoires. La suggestion de correction pourrait être d\'indiquer
-        <br>
-        clairement quels champs sont obligatoires et d\'afficher un message d\'erreur spécifique pour chaque champ
-        <br>
-        manquant.
-        <br>
+                if (!empty($_POST["password"])) {
+                    setcookie("LWPS_PASSWORD", $_POST["password"], time()+2300000, "/", $_SERVER["SERVER_NAME"]);
+                }
+        include_once("../lwp-serveur/password.php");
+if (!empty($_COOKIE["LWPS_PASSWORD"])) {
+    if ($_COOKIE["LWPS_PASSWORD"] == $CODE) {
+        echo "C.O.D.E OK!";
+        if (!empty($_POST["password2"])) {
+            rename("../lwp-serveur/".$CODE.".json", "../lwp-serveur/".$_POST["password2"].".json");
+            setcookie("LWPS_PASSWORD", $_POST["password2"], time()+2300000, "/", $_SERVER["SERVER_NAME"]);
+            file_put_contents("../lwp-serveur/password.php", \'
+            <?php
+            $CODE="\'.$_POST["password2"].\'"
+            ?>
+        \');
+        echo "MDP CHANGÉ!";
+        }
+        } else {
+        echo "WRONG CODE!";
+        }
+        } else {
+        setcookie("LWPS_PASSWORD", "1234", time()+2300000, "/", $_SERVER["SERVER_NAME"]);
+        }
+        ?>
+        <form method="post" action="./start.php">
+            <input name="password" type="password" placeholder="Mot de passe"></input>
+            <input type="submit" value="Se Connecter"></input>
+            <br>
+            ^
+            <br>
+            |
+            <h2>(Nouveau Mot De Passe Mettez votre mdp AVANT)</h2>
+            <input name="password2" type="password" placeholder="Nouveau Mot de passe"></input>
+            <input type="submit" value="Valider"></input>
+            <a href="index.php">Retours</a>
+        </form>
+    </main>
+    <style>
+    body {
+        background: rgb(182, 91, 91);
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        <br>
-        "Page introuvable" : Ce message d\'erreur peut être affiché si un utilisateur essaie d\'accéder à une page qui
-        <br>
-        n\'existe pas ou qui a été déplacée. La suggestion de correction pourrait être de rediriger l\'utilisateur vers
-        <br>
-        une page similaire ou de lui offrir une recherche pour trouver la page qu\'il cherche.
-        <br>
+    main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        background-color: white;
+        border: 10px solid black;
+        border-radius: 20px;
+        box-shadow: inset 0 0 20px 0px;
+        overflow: scroll;
+    }
 
-        <br>
-        "Erreur de chargement de page" : Ce message d\'erreur peut être affiché si une page ne peut pas être chargée en
-        <br>
-        raison d\'un problème technique. La suggestion de correction pourrait être de demander à l\'utilisateur de
-        <br>
-        vérifier sa connexion Internet ou de contacter l\'assistance technique pour obtenir de l\'aide.
-        <br>
-    </p>
-    </p>
+    input {
+        padding: 10px;
+        background-color: salmon;
+        color: black;
+        border-radius: 20px;
+        transition: 0.5s;
+    }
+
+    input[type="submit"]:hover {
+        letter-spacing: 5px;
+    }
+
+    .red {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: red;
+    }
+    </style>
 </body>
 
 </html>
@@ -1979,7 +1996,6 @@ header("Location: ../lwp-error/start.php");
 ?>
 ');
 file_put_contents("success.php", '<?php
-<?php
 echo "L\'opération est un succès! redirection : <a href=\'./index.php\'>Passer</a>";
 ?>
 <script>
@@ -1988,7 +2004,7 @@ setTimeout(() => {
 }, 2000);
 </script>
 ');
-file_put_contents("index.php", '<?php
+file_put_contents("index.php", '
 <?php
 include_once("./lwp-serveur/password.php");
 if (!empty($_COOKIE["LWPS_PASSWORD"])) {
@@ -2003,7 +2019,6 @@ header("Location: home/");
 ?>
 ');
 file_put_contents("error.php", '<?php
-<?php
 header("Location: lwp-error/know.php");
 ?>
 ');
@@ -2011,5 +2026,5 @@ header("Location: lwp-error/know.php");
 ?>
 <form action="./index.php" method="post">
     Nom de votre site web!
-    <input type="text" name="NameOfWebNameOfWeb" id="">
+    <input type="text" name="NameOfWeb" id="">
 </form>
