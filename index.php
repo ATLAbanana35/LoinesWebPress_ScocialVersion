@@ -1641,7 +1641,7 @@ if (!empty($_COOKIE["LWPS_PASSWORD"])) {
 
 </html>
 ');
-file_put_contents("./lwp-error/start.php", '
+file_put_contents("./lwp-error/error.php", '
 <!DOCTYPE html>
 <html>
 
