@@ -24,3 +24,6 @@ Retrouvez plus d'informations sur moi et mes autres projets sur mon profil GitHu
 ## Licence
 
 Ce projet est sous licence MIT. Veuillez consulter le fichier LICENSE pour plus d'informations.
+
+## Future Mise À Jours
+Nous préparont actuelement la V2
