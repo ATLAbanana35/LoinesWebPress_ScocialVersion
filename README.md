@@ -42,4 +42,4 @@ Ce projet est sous licence Creative Commons. Veuillez consulter le fichier LICEN
 
 ## Future Mise À Jours
 
-Nous préparont actuelement la V2
+Nous préparont actuelement d'autres plug-ins
