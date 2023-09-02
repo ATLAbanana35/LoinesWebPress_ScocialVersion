@@ -4,10 +4,25 @@ Ce projet contient un fichier PHP qui permet de créer une plateforme similaire 
 
 ## Installation
 
-Pour installer ce projet, suivez les étapes suivantes :
+Pour installer la V2.0 de ce project (par PHP), suivez les étapes suivantes :
+
+1. téléchargez et mettez sur votre site web le fichier index.php et le fichier lwps.zip
+
+2. Allez sur \[votre_site\]/index.php, rechargez la page EET C'EST BON!
+
+Pour installer la V2.0 de ce project (par Releases), suivez les étapes suivantes :
+
+1. téléchargez le fichier dans Releases de la 2.0
+
+2. dézippez-le et mettez-le sur votre site web
+
+Pour installer la V1.0 de ce projet, suivez les étapes suivantes :
 
 1. Téléchargez le fichier PHP à partir du lien suivant : [LoinesWebPress_SocialVersion_V1.0.php](https://github.com/ATLAbanana35/LoinesWebPress_ScocialVersion_V1.0/LoinesWebPress_SocialVersion_V1.0.php)
-2. Suivez le tutoriel d'installation disponible ici : [Vidéo d'installation](https://youtu.be/SoX6PT-DTac)
+
+# Utilisations
+
+Pour configurer LWPS vous devez vous rendre à \[votre_site\]/lwp-admin/, cela vous demandera un mot de passe, mettez 1234, ET CHANGEZ-LE!, Vous pourrez installer le plug-in de tuto
 
 ## Site Web
 
@@ -23,7 +38,8 @@ Retrouvez plus d'informations sur moi et mes autres projets sur mon profil GitHu
 
 ## Licence
 
-Ce projet est sous licence MIT. Veuillez consulter le fichier LICENSE pour plus d'informations.
+Ce projet est sous licence Creative Commons. Veuillez consulter le fichier LICENSE pour plus d'informations.
 
 ## Future Mise À Jours
+
 Nous préparont actuelement la V2
